@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09B10AC3-5730-4D04-95AF-B964D41709C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MBMS.DAL</RootNamespace>
+    <AssemblyName>MBMS.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdvanceMoneyCustomer.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillCode7Layer.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillCode7LayerDetail.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillCodeSummaryPro_Result.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillDay.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyProfile.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ledger.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LedgerSummaryList_Result.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogData.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ManualMeterUnitCollect.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MBMSModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MBMSModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MBMSModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MBMSModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MBMSModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Meter.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MeterBill.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MeterBox.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MeterHistory.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MeterLossesMultiplierChangeHistory.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MeterType.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MeterUnitCollect.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pole.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PunishmentCustomer.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PunishmentRule.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Quarter.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleManagement.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StreetLightFee.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Township.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transformer.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransformerHistory.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserInRole.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="MBMSModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MBMSModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MBMSModel.edmx.diagram">
+      <DependentUpon>MBMSModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MBMSModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MBMSModel.edmx</DependentUpon>
+      <LastGenOutput>MBMSModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MBMSModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MBMSModel.edmx</DependentUpon>
+      <LastGenOutput>MBMSModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

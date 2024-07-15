@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MBMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MBMS.dbo.Quarter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Quarter">
+          <Key>
+            <PropertyRef Name="QuarterID" />
+            <PropertyRef Name="QuarterCode" />
+            <PropertyRef Name="QuarterNameInEng" />
+            <PropertyRef Name="QuarterNameInMM" />
+            <PropertyRef Name="TownshipID" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="CreatedUserID" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="QuarterID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="QuarterCode" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="QuarterNameInEng" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="QuarterNameInMM" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="TownshipID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedUserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedUserID" Type="char" MaxLength="36" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="DeletedUserID" Type="char" MaxLength="36" />
+          <Property Name="DeletedDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MBMS.dbo.Role' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+            <PropertyRef Name="RoleName" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="CreatedUserID" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="RoleID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="RoleLevel" Type="nvarchar" MaxLength="256" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedUserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedUserID" Type="char" MaxLength="36" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="DeletedUserID" Type="char" MaxLength="36" />
+          <Property Name="DeletedDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MBMS.dbo.Township' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Township">
+          <Key>
+            <PropertyRef Name="TownshipID" />
+            <PropertyRef Name="TownshipCode" />
+            <PropertyRef Name="TownshipNameInEng" />
+            <PropertyRef Name="TownshipNameInMM" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="CreatedUserID" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="TownshipID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="TownshipCode" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="TownshipNameInEng" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TownshipNameInMM" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedUserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedUserID" Type="char" MaxLength="36" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="DeletedUserID" Type="char" MaxLength="36" />
+          <Property Name="DeletedDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MBMS.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="RoleID" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="CreatedUserID" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="UserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="RoleID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="SecurityQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="SecurityAnswer" Type="nvarchar" MaxLength="256" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedUserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedUserID" Type="char" MaxLength="36" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="DeletedUserID" Type="char" MaxLength="36" />
+          <Property Name="DeletedDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MBMS.dbo.UserInRole' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserInRole">
+          <Key>
+            <PropertyRef Name="UserInRoleID" />
+            <PropertyRef Name="RoleID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="CreatedUserID" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="UserInRoleID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="RoleID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="UserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedUserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedUserID" Type="char" MaxLength="36" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="DeletedUserID" Type="char" MaxLength="36" />
+          <Property Name="DeletedDate" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="MBMSModelStoreContainer">
+          <EntitySet Name="Quarter" EntityType="Self.Quarter" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Quarter].[QuarterID] AS [QuarterID], 
+[Quarter].[QuarterCode] AS [QuarterCode], 
+[Quarter].[QuarterNameInEng] AS [QuarterNameInEng], 
+[Quarter].[QuarterNameInMM] AS [QuarterNameInMM], 
+[Quarter].[Address] AS [Address], 
+[Quarter].[TownshipID] AS [TownshipID], 
+[Quarter].[Active] AS [Active], 
+[Quarter].[CreatedUserID] AS [CreatedUserID], 
+[Quarter].[CreatedDate] AS [CreatedDate], 
+[Quarter].[UpdatedUserID] AS [UpdatedUserID], 
+[Quarter].[UpdatedDate] AS [UpdatedDate], 
+[Quarter].[DeletedUserID] AS [DeletedUserID], 
+[Quarter].[DeletedDate] AS [DeletedDate]
+FROM [dbo].[Quarter] AS [Quarter]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Role" EntityType="Self.Role" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Role].[RoleID] AS [RoleID], 
+[Role].[RoleName] AS [RoleName], 
+[Role].[RoleLevel] AS [RoleLevel], 
+[Role].[Active] AS [Active], 
+[Role].[CreatedUserID] AS [CreatedUserID], 
+[Role].[CreatedDate] AS [CreatedDate], 
+[Role].[UpdatedUserID] AS [UpdatedUserID], 
+[Role].[UpdatedDate] AS [UpdatedDate], 
+[Role].[DeletedUserID] AS [DeletedUserID], 
+[Role].[DeletedDate] AS [DeletedDate]
+FROM [dbo].[Role] AS [Role]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Township" EntityType="Self.Township" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Township].[TownshipID] AS [TownshipID], 
+[Township].[TownshipCode] AS [TownshipCode], 
+[Township].[TownshipNameInEng] AS [TownshipNameInEng], 
+[Township].[TownshipNameInMM] AS [TownshipNameInMM], 
+[Township].[Address] AS [Address], 
+[Township].[Active] AS [Active], 
+[Township].[CreatedUserID] AS [CreatedUserID], 
+[Township].[CreatedDate] AS [CreatedDate], 
+[Township].[UpdatedUserID] AS [UpdatedUserID], 
+[Township].[UpdatedDate] AS [UpdatedDate], 
+[Township].[DeletedUserID] AS [DeletedUserID], 
+[Township].[DeletedDate] AS [DeletedDate]
+FROM [dbo].[Township] AS [Township]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[User].[UserID] AS [UserID], 
+[User].[UserName] AS [UserName], 
+[User].[Password] AS [Password], 
+[User].[RoleID] AS [RoleID], 
+[User].[SecurityQuestion] AS [SecurityQuestion], 
+[User].[SecurityAnswer] AS [SecurityAnswer], 
+[User].[LastLoginDate] AS [LastLoginDate], 
+[User].[Active] AS [Active], 
+[User].[CreatedUserID] AS [CreatedUserID], 
+[User].[CreatedDate] AS [CreatedDate], 
+[User].[UpdatedUserID] AS [UpdatedUserID], 
+[User].[UpdatedDate] AS [UpdatedDate], 
+[User].[DeletedUserID] AS [DeletedUserID], 
+[User].[DeletedDate] AS [DeletedDate]
+FROM [dbo].[User] AS [User]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserInRole" EntityType="Self.UserInRole" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[UserInRole].[UserInRoleID] AS [UserInRoleID], 
+[UserInRole].[RoleID] AS [RoleID], 
+[UserInRole].[UserID] AS [UserID], 
+[UserInRole].[Active] AS [Active], 
+[UserInRole].[CreatedUserID] AS [CreatedUserID], 
+[UserInRole].[CreatedDate] AS [CreatedDate], 
+[UserInRole].[UpdatedUserID] AS [UpdatedUserID], 
+[UserInRole].[UpdatedDate] AS [UpdatedDate], 
+[UserInRole].[DeletedUserID] AS [DeletedUserID], 
+[UserInRole].[DeletedDate] AS [DeletedDate]
+FROM [dbo].[UserInRole] AS [UserInRole]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MBMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityType Name="Quarter">
+          <Key>
+            <PropertyRef Name="QuarterID" />
+            <PropertyRef Name="QuarterCode" />
+            <PropertyRef Name="QuarterNameInEng" />
+            <PropertyRef Name="QuarterNameInMM" />
+            <PropertyRef Name="TownshipID" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="CreatedUserID" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="QuarterID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="QuarterCode" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="QuarterNameInEng" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="QuarterNameInMM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TownshipID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+            <PropertyRef Name="RoleName" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="CreatedUserID" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="RoleID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="RoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleLevel" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Township">
+          <Key>
+            <PropertyRef Name="TownshipID" />
+            <PropertyRef Name="TownshipCode" />
+            <PropertyRef Name="TownshipNameInEng" />
+            <PropertyRef Name="TownshipNameInMM" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="CreatedUserID" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="TownshipID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TownshipCode" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TownshipNameInEng" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TownshipNameInMM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="RoleID" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="CreatedUserID" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="UserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SecurityQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityAnswer" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UserInRole">
+          <Key>
+            <PropertyRef Name="UserInRoleID" />
+            <PropertyRef Name="RoleID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="CreatedUserID" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="UserInRoleID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="RoleID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="MBMS">
+          <EntitySet Name="Quarters" EntityType="Self.Quarter" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="Townships" EntityType="Self.Township" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserInRoles" EntityType="Self.UserInRole" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="MBMSModelStoreContainer" CdmEntityContainer="MBMS">
+          <EntitySetMapping Name="Quarters">
+            <EntityTypeMapping TypeName="MBMSModel.Quarter">
+              <MappingFragment StoreEntitySet="Quarter">
+                <ScalarProperty Name="QuarterID" ColumnName="QuarterID" />
+                <ScalarProperty Name="QuarterCode" ColumnName="QuarterCode" />
+                <ScalarProperty Name="QuarterNameInEng" ColumnName="QuarterNameInEng" />
+                <ScalarProperty Name="QuarterNameInMM" ColumnName="QuarterNameInMM" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="TownshipID" ColumnName="TownshipID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="MBMSModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleLevel" ColumnName="RoleLevel" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Townships">
+            <EntityTypeMapping TypeName="MBMSModel.Township">
+              <MappingFragment StoreEntitySet="Township">
+                <ScalarProperty Name="TownshipID" ColumnName="TownshipID" />
+                <ScalarProperty Name="TownshipCode" ColumnName="TownshipCode" />
+                <ScalarProperty Name="TownshipNameInEng" ColumnName="TownshipNameInEng" />
+                <ScalarProperty Name="TownshipNameInMM" ColumnName="TownshipNameInMM" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MBMSModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="SecurityQuestion" ColumnName="SecurityQuestion" />
+                <ScalarProperty Name="SecurityAnswer" ColumnName="SecurityAnswer" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInRoles">
+            <EntityTypeMapping TypeName="MBMSModel.UserInRole">
+              <MappingFragment StoreEntitySet="UserInRole">
+                <ScalarProperty Name="UserInRoleID" ColumnName="UserInRoleID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
